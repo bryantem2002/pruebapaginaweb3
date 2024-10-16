@@ -1,0 +1,581 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Reseñas del Publico</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://unpkg.com/lucide-react/dist/index.umd.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <link rel='stylesheet'href='https://cdn-uicons.flaticon.com/2.6.0/uicons-regular-straight/css/uicons-regular-straight.css'>
+    <style> 
+ 
+ 
+
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+body {
+  font-family: Arial, sans-serif;
+  background-color: #121f33;
+  color: white;
+  margin: 0;
+  padding: 0;
+}
+
+/* Sección Hero */
+.hero {
+  position: relative;
+  text-align: center;
+  color: white;
+  padding: 150px 20px;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  min-height: 60vh; /* Un poco más pequeño que en Servicios */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.hero::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5); /* Fondo oscuro semitransparente */
+  z-index: -1;
+}
+
+.hero-content {
+  position: relative;
+  z-index: 1;
+  max-width: 800px;
+  text-align: center;
+}
+
+.hero h1 {
+  font-size: 48px;
+  font-weight: bold;
+  margin-bottom: 20px;
+}
+
+.hero p {
+  font-size: 20px;
+  line-height: 1.6;
+}
+
+/* Sección de reseñas */
+/* Sección de reseñas */
+.reseñas-section {
+  padding: 60px 20px;
+  background-color: #121f33; /* Fondo oscuro */
+  text-align: center;
+}
+
+.reseñas-section h2 {
+  font-size: 32px;
+  color: #0275d8; /* Azul para el título */
+  margin-bottom: 40px;
+}
+
+/* Contenedor en forma de grid */
+.reseñas-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); /* Adaptable a diferentes tamaños */
+  gap: 20px;
+  justify-items: center; /* Centra horizontalmente las reseñas */
+  align-items: center; /* Centra verticalmente las reseñas */
+  max-width: 1200px; /* Limita el ancho máximo del contenedor */
+  margin: 0 auto; /* Centra el contenedor horizontalmente */
+}
+
+/* Estilo de cada reseña */
+/* Sección de reseñas */
+.reseñas-section {
+  padding: 60px 20px;
+  background-color: #121f33; /* Fondo oscuro */
+  text-align: center;
+}
+
+/* Título de la sección de reseñas */
+.reseñas-section h2 {
+  font-size: 32px;
+  color: #0275d8; /* Azul para el título */
+  margin-bottom: 40px;
+}
+
+/* Contenedor en forma de grid */
+.reseñas-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); /* Adaptable a diferentes tamaños */
+  gap: 20px;
+  justify-content: center; /* Centra las columnas del grid */
+  max-width: 1200px; /* Ancho máximo del contenedor */
+  margin: 0 auto; /* Centra el contenedor horizontalmente */
+  padding: 0 20px; /* Espaciado adicional para móviles */
+}
+
+/* Estilo de cada reseña */
+.reseña {
+  background-color: #1c2d4d;
+  padding: 40px 20px;
+  border-radius: 10px;
+  text-align: center;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+  display: flex;
+  flex-direction: column;
+  align-items: center; /* Centra el contenido horizontalmente */
+  justify-content: center; /* Centra el contenido verticalmente */
+}
+
+/* Imagen de la reseña */
+.imagen-reseña {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  margin-bottom: 20px;
+  object-fit: cover; /* Asegura que la imagen cubra bien el círculo */
+}
+
+/* Estilo del texto de la reseña */
+.reseña p {
+  font-size: 16px;
+  color: #eaeaea;
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+/* Estilo del nombre de la reseña */
+.reseña h3 {
+  font-size: 18px;
+  color: #ffffff;
+  margin-bottom: 10px;
+}
+
+/* Estilo de la fecha de la reseña */
+.reseña .fecha {
+  font-size: 14px;
+  color: #72aceb;
+}
+
+/* Ajustes para pantallas pequeñas */
+@media (max-width: 768px) {
+  .reseñas-grid {
+    grid-template-columns: 1fr; /* Cambia a una columna en pantallas pequeñas */
+  }
+}
+
+/* Ajustes para pantallas medianas */
+@media (min-width: 769px) and (max-width: 1024px) {
+  .reseñas-grid {
+    grid-template-columns: repeat(2, 1fr); /* Dos columnas en pantallas medianas */
+  }
+}
+
+
+
+
+/* Sección del formulario */
+.formulario-section {
+    background-color: #2d4a77; /* Color de fondo */
+    padding: 60px 0;
+}
+
+.container-form {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.form-image {
+    flex: 1;
+    text-align: center;
+}
+
+.form-image img {
+    max-width: 80%;
+    height: auto;
+}
+
+.form-content {
+    flex: 1;
+    padding: 20px;
+    background-color: #66b8d8;
+    border-radius: 10px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.form-content h2 {
+    font-size: 28px;
+    margin-bottom: 20px;
+    color: #fff; /* Aumenté el contraste del texto */
+}
+
+.form-content p {
+    font-size: 16px;
+    margin-bottom: 20px;
+    color: #e0f7ff; /* Texto más claro */
+}
+
+.form-group {
+    margin-bottom: 20px;
+}
+
+.form-group input,
+.form-group textarea {
+    width: 100%;
+    padding: 12px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-sizing: border-box;
+    background-color: #fff; /* Fondo claro para mayor legibilidad */
+    color: #333; /* Texto más oscuro */
+}
+
+.form-group input::placeholder,
+.form-group textarea::placeholder {
+    color: #777; /* Color más oscuro para mayor legibilidad */
+}
+
+.form-group button {
+    width: 100%;
+    padding: 15px;
+    background: linear-gradient(to right, #6a11cb, #2575fc);
+    color: white;
+    font-size: 16px;
+    border: none;
+    border-radius: 30px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease; /* Añadí una pequeña animación */
+}
+
+.form-group button:hover {
+    background: linear-gradient(to right, #5a0db8, #2066e3);
+    transform: scale(1.02); /* Efecto ligero de zoom al pasar el ratón */
+}
+
+/* Ajustes para pantallas pequeñas */
+@media (max-width: 768px) {
+  .container-form {
+    flex-direction: column; /* Apilar los elementos en pantallas pequeñas */
+  }
+
+  .form-image {
+    margin-bottom: 20px; /* Espacio entre la imagen y el formulario */
+  }
+}
+
+
+
+</style>
+</head>
+<body>
+    <!-- Header -->
+    <header class="fixed z-50 w-full bg-sky-600 text-white shadow-2xl">
+        <div class="w-full max-w-screen-xl mx-auto px-4 py-3 flex items-center justify-between">
+            <div class="flex items-center space-x-8">
+                <div class="logo">
+                    <a href="index.html">
+                        <h1 class="text-3xl font-bold tracking-wider">ETUCHISA</h1>
+                    </a>
+                </div>
+                <nav class="hidden md:block">
+                    <ul class="flex space-x-6">
+                        <li><a href="nosotros.html" class="flex items-center hover:text-sky-200 transition-colors duration-200"><i
+                                    class="fi fi-rs-users-alt w-5 h-5 mr-1"></i><span>Nosotros</span></a></li>
+                        <li><a href="Servicios.html" class="flex items-center hover:text-sky-200 transition-colors duration-200"><i
+                                    class="fi fi-rs-steering-wheel w-5 h-5 mr-1"></i><span>Servicios</span></a></li>
+                        <li><a href="ayuda.html" class="flex items-center hover:text-sky-200 transition-colors duration-200"><i
+                                    class="fi fi-rs-interrogation w-5 h-5 mr-1"></i><span>Ayuda</span></a></li>
+                        <li><a href="trabaja.html" class="flex items-center hover:text-sky-200 transition-colors duration-200"><i
+                                    class="fi fi-rs-employee-man w-5 h-5 mr-1"></i><span>Trabaja con nosotros</span></a>
+                        </li>
+                        <li><a href="recargar.html" class="flex items-center hover:text-sky-200 transition-colors duration-200"><i
+                                    class="fi fi-rs-donate w-5 h-5 mr-1"></i><span>Recarga tu tarjeta</span></a></li>
+                        <li><a href="noticias.html" class="flex items-center hover:text-sky-200 transition-colors duration-200">
+                                <i class="fi fi-rs-newspaper-open w-5 h-5 mr-1"></i><span>Noticias</span></a></li>
+                    </ul>
+                </nav>
+            </div>
+            <div class="flex items-center space-x-4">
+                <i data-lucide="globe-2" class="w-5 h-5"></i>
+
+                <button
+                    class="bg-white text-sky-600 py-2 px-4 rounded-full hover:bg-sky-100 transition-colors duration-200 font-semibold" onclick="window.location.href='login.html';">Iniciar
+                    sesión<i class="fi fi-rs-user w-5 h-5 mr-1 ml-1 "></i></button>
+                <button data-collapse-toggle="navbar-collapse" type="button"
+                    class="inline-flex items-center p-2 w-10 h-10 justify-center text-sm text-white rounded-lg md:hidden hover:bg-sky-300 focus:outline-none focus:ring-2 focus:ring-sky-200"
+                    aria-controls="navbar-collapse" aria-expanded="false" id="menu-button">
+                    <span class="sr-only">Open main menu</span>
+                    <svg class="w-5 h-5" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none"
+                        viewBox="0 0 17 14">
+                        <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            d="M1 1h15M1 7h15M1 13h15" />
+                    </svg>
+                </button>
+            </div>
+        </div>
+        <nav class="md:hidden hidden" id="navbar-collapse">
+            <ul class="space-y-4 p-4">
+                <li><a href="nosotros.html" class="block text-white hover:bg-sky-500 rounded py-2 px-3"><i
+                            class="fi fi-rs-users-alt w-5 h-5 mr-1"></i> Nosotros</a></li>
+                <li><a href="Servicios.html" class="block text-white hover:bg-sky-500 rounded py-2 px-3"><i
+                            class="fi fi-rs-steering-wheel w-5 h-5 mr-1"></i> Servicios</a></li>
+                <li><a href="ayuda.html" class="block text-white hover:bg-sky-500 rounded py-2 px-3"><i
+                            class="fi fi-rs-interrogation w-5 h-5 mr-1"></i> Ayuda</a></li>
+                <li><a href="#" class="block text-white hover:bg-sky-500 rounded py-2 px-3"><i
+                            class="fi fi-rs-employee-man w-5 h-5 mr-1"></i> Trabaja con nosotros</a></li>
+                <li><a href="#" class="block text-white hover:bg-sky-500 rounded py-2 px-3"><i
+                            class="fi fi-rs-donate w-5 h-5 mr-1"></i> Recarga tu tarjeta</a></li>
+                <li><a href="noticias.html" class="block text-white hover:bg-sky-500 rounded py-2 px-3">
+                        <i class="fi fi-rs-newspaper-open w-5 h-5 mr-1"></i> Noticias</a></li>
+            </ul>
+        </nav>
+    </header>
+    <!-- Body -->
+  <!-- Sección Hero -->
+  <section class="hero" style="background-image: url('img/Reseñashero.png');">
+    <div class="hero-content">
+      <h1>Reseñas de ETUCHISA</h1>
+      <p>Escucha lo que nuestros pasajeros tienen que decir sobre nuestros servicios.</p>
+    </div>
+  </section>
+
+  <!-- Sección de Reseñas del Público -->
+  <section class="reseñas-section">
+    <div class="container">
+      <h2>Lo que dice el público</h2>
+
+      <!-- Contenedor de las reseñas en formato grid -->
+      <div class="reseñas-grid">
+        
+        <!-- Reseña 1 -->
+        <div class="reseña">
+          <img src="img/testimonio1.jpg" alt="Persona 1" class="imagen-reseña">
+          <p>"Excelente servicio, siempre puntuales y los conductores muy amables. ¡Recomendado!"</p>
+          <h3>Diego Pérez</h3>
+          <span class="fecha">12 de Octubre de 2024</span>
+        </div>
+        
+        <!-- Reseña 2 -->
+        <div class="reseña">
+          <img src="img/testimonio4.jpg" alt="Persona 2" class="imagen-reseña">
+          <p>"La comodidad de los asientos es increíble, y los conductores siempre respetuosos. ¡Seguiré usando ETUCHISA!"</p>
+          <h3>Ana Rodríguez</h3>
+          <span class="fecha">10 de Octubre de 2024</span>
+        </div>
+
+        <!-- Reseña 3 -->
+        <div class="reseña">
+          <img src="img/testimonio3.jpg" alt="Persona 3" class="imagen-reseña">
+          <p>"Viajo todos los días en ETUCHISA y el servicio es de primera calidad, nunca me ha decepcionado."</p>
+          <h3>Gerson Gutiérrez</h3>
+          <span class="fecha">8 de Octubre de 2024</span>
+        </div>
+
+        <!-- Reseña 4 -->
+        <div class="reseña">
+          <img src="img/testimonio5.png" alt="Persona 4" class="imagen-reseña">
+          <p>"Me siento muy segura viajando en ETUCHISA, los conductores son atentos y profesionales."</p>
+          <h3>Lucía Gómez</h3>
+          <span class="fecha">7 de Octubre de 2024</span>
+        </div>
+
+        <!-- Reseña 5 -->
+        <div class="reseña">
+          <img src="img/testimonio2.jpg" alt="Persona 5" class="imagen-reseña">
+          <p>"El servicio al cliente es impecable, siempre dispuestos a ayudar y resolver cualquier duda."</p>
+          <h3>Luis Cancha</h3>
+          <span class="fecha">5 de Octubre de 2024</span>
+        </div>
+
+        <!-- Reseña 6 -->
+        <div class="reseña">
+          <img src="img/testimonio6.png" alt="Persona 6" class="imagen-reseña">
+          <p>"Un servicio confiable y seguro. Llevo años viajando con ETUCHISA y siempre ha sido excelente."</p>
+          <h3>Laura Fernández</h3>
+          <span class="fecha">2 de Octubre de 2024</span>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <section class="formulario-section">
+    <div class="container-form">
+        <!-- Columna izquierda: Imagen de sobre -->
+        <div class="form-image">
+            <img src="img/sobreformulario.png" style="width:570px; height:500px;" alt="Sobre de contacto">
+        </div>
+
+        <!-- Columna derecha: Formulario -->
+        <div class="form-content">
+            <h2>¿Tienes alguna pregunta?</h2>
+            <p>ETUCHISA siempre está aquí para ayudarte. Envíanos tus consultas o sugerencias y nos pondremos en contacto contigo.</p>
+
+            <!-- Formulario EmailJS -->
+            <form id="form">
+                <div class="form-group field">
+                    <label for="from_name">Nombre</label>
+                    <input type="text" name="from_name" id="from_name" placeholder="Nombre" required>
+                </div>
+                <div class="form-group field">
+                    <label for="company">Empresa</label>
+                    <input type="text" name="company" id="company" placeholder="Empresa" required>
+                </div>
+                <div class="form-group field">
+                    <label for="phone">Teléfono</label>
+                    <input type="text" name="phone" id="phone" placeholder="Teléfono" required>
+                </div>
+                
+                <div class="form-group field">
+                    <label for="comments">Comentarios</label>
+                    <textarea name="comments" id="comments" placeholder="Escribe tus comentarios aquí..." rows="5" required></textarea>
+                </div>
+                <div class="form-group field">
+                    <label for="reply_to">Responder a</label>
+                    <input type="email" name="reply_to" id="reply_to" placeholder="Correo de Respuesta" required>
+                </div>
+
+                <div class="form-group">
+                    <button type="submit" id="button">Enviar Mensaje</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+
+    <script type="text/javascript"
+  src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+
+  <script type="text/javascript">
+    emailjs.init('nL3OzJ7qi4gmGnN0A');
+    const btn = document.getElementById('button');
+
+document.getElementById('form')
+  .addEventListener('submit', function(event) {
+    event.preventDefault();
+
+    btn.value = 'Enviando...';
+
+    const serviceID = 'default_service';
+    const templateID = 'template_c250tfm';
+
+    emailjs.sendForm(serviceID, templateID, this)
+      .then(() => {
+        btn.value = 'Enviar Mensaje';
+        alert('¡Mensaje enviado con éxito!');
+        
+        // Limpiar el formulario después de enviar
+        document.getElementById('form').reset();
+      }, (err) => {
+        btn.value = 'Enviar Mensaje';
+        alert('Error: ' + JSON.stringify(err));
+      });
+  });
+
+
+  </script>
+
+
+
+
+</section>
+  <!-- Footer -->  
+  <footer class="bg-sky-700 text-white mt-4">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            <div class="space-y-6">
+                <h2 class="text-3xl font-bold">ETUCHISA</h2>
+                <p class="text-gray-300">Viajes seguros y accesibles a tu puerta en todo Perú.</p>
+                <h3 class="text-lg font-semibold mb-4">Redes sociales</h3>
+
+                <a href="https://www.facebook.com/etuchisa.oficial/?locale=es_LA "target="_blank">
+                    <i class="fab cursor-pointer fa-facebook-f"
+                        style="font-size: 30px; margin: 0 10px; transition: transform 0.3s;"
+                        onmouseover="this.style.transform='scale(1.2)'"
+                        onmouseout="this.style.transform='scale(1)'"></i>
+                </a>
+                <a href="https://www.instagram.com/etuchisa.oficial/reels/?hl=da"target="_blank">
+                    <i class="fab fa-instagram" style="font-size: 30px; margin: 0 10px; transition: transform 0.3s;"
+                        onmouseover="this.style.transform='scale(1.2)'"
+                        onmouseout="this.style.transform='scale(1)'"></i>
+                </a>
+                <a href="https://www.tiktok.com/@etuchisa.oficial?fbclid=IwY2xjawF1QA1leHRuA2FlbQIxMAABHe-bjfinZ9CuMBFO3-I3wl86Ifz_S-IvwkXv_jqcBV6WGoydhQ07i31Hbg_aem_ngfdFMLPQtmExnS_GIdAAQ"
+                    target="_blank">
+                    <i class="fab cursor-pointer fa-tiktok"
+                        style="font-size: 30px; margin: 0 10px; transition: transform 0.3s;"
+                        onmouseover="this.style.transform='scale(1.2)'"
+                        onmouseout="this.style.transform='scale(1)'"></i>
+                </a>
+                <div class="flex space-x-4">
+                    <a href="#" class="text-gray-400 hover:text-white">
+                        <i data-lucide="facebook" class="w-6 h-6"></i>
+                    </a>
+                    <a href="#" class="text-gray-400 hover:text-white">
+                        <i data-lucide="twitter" class="w-6 h-6"></i>
+                    </a>
+                    <a href="#" class="text-gray-400 hover:text-white">
+                        <i data-lucide="instagram" class="w-6 h-6"></i>
+                    </a>
+                </div>
+            </div>
+            <div>
+                <h3 class="text-lg font-semibold mb-4">Enlaces rápidos</h3>
+                <ul class="space-y-2">
+                    <li><a href="terminos.html" class="text-gray-300 hover:text-white"><i
+                        class="fa fa-angle-right mr-2"></i>Términos de uso</a></li>                        
+                    <li><a href="politicaprivacidad.html" class="text-gray-300 hover:text-white"><i
+                                class="fa fa-angle-right mr-2"></i>Política de privacidad</a></li>
+                    <li><a href="ayuda.html" class="text-gray-300 hover:text-white"><i
+                                class="fa fa-angle-right mr-2"></i>Servicio de asistencia</a></li>
+                    <li><a href="preguntas.html" class="text-gray-300 hover:text-white"><i
+                                class="fa fa-angle-right mr-2"></i>Preguntas frecuentes</a></li>
+                </ul>
+            </div>
+            <div>
+                <h3 class="text-lg font-semibold mb-4">Informacion</h3>
+                <ul class="space-y-2">
+                    <p><i class="fa fa-phone-alt mr-2"></i>+51 999 999 999</p>
+                    <p><i class="fa fa-map-marker-alt mr-2"></i>Villa el Salvador, Peru · Puente Piedra, Peru</p>
+                    <p><i class="fa fa-envelope mr-2"></i>etuchisa.grupo5@gmail.com</p>
+                </ul>
+            </div>
+        </div>
+        <div class="mt-12 pt-8 border-t border-gray-700">
+            <div class="text-center sm:flex sm:justify-between sm:text-left">
+                <p class="text-sm text-gray-400">&copy; 2024 ETUCHISA</p>
+                <p class="mt-2 text-sm text-gray-400 sm:mt-0">
+                    ETUCHISA brinda servicios de tecnología de la información solamente. Los servicios de transporte
+                    están a cargo de terceros independientes.
+                </p>
+            </div>
+        </div>
+    </div>
+</footer>                 
+</body>
+</html>

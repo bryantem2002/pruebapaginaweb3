@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ETUCHISA</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://unpkg.com/lucide-react/dist/index.umd.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <link rel='stylesheet'
+        href='https://cdn-uicons.flaticon.com/2.6.0/uicons-regular-straight/css/uicons-regular-straight.css'>
+
+</head>
+
+<body>
+    <header class="fixed z-50 w-full bg-sky-600 text-white shadow-2xl">
+        <div class="w-full max-w-screen-xl mx-auto px-4 py-3 flex items-center justify-between">
+            <div class="flex items-center space-x-8">
+                <div class="logo">
+                    <a href="index.html">
+                        <h1 class="text-3xl font-bold tracking-wider">ETUCHISA</h1>
+                    </a>
+                </div>
+                <nav class="hidden md:block">
+                    <ul class="flex space-x-6">
+                        <li><a href="nosotros.html" class="flex items-center hover:text-sky-200 transition-colors duration-200"><i
+                                    class="fi fi-rs-users-alt w-5 h-5 mr-1"></i><span>Nosotros</span></a></li>
+                        <li><a href="Servicios.html" class="flex items-center hover:text-sky-200 transition-colors duration-200"><i
+                                    class="fi fi-rs-steering-wheel w-5 h-5 mr-1"></i><span>Servicios</span></a></li>
+                        <li><a href="ayuda.html" class="flex items-center hover:text-sky-200 transition-colors duration-200"><i
+                                    class="fi fi-rs-interrogation w-5 h-5 mr-1"></i><span>Ayuda</span></a></li>
+                        <li><a href="trabaja.html" class="flex items-center hover:text-sky-200 transition-colors duration-200"><i
+                                    class="fi fi-rs-employee-man w-5 h-5 mr-1"></i><span>Trabaja con nosotros</span></a>
+                        </li>
+                        <li><a href="recargar.html" class="flex items-center hover:text-sky-200 transition-colors duration-200"><i
+                                    class="fi fi-rs-donate w-5 h-5 mr-1"></i><span>Recarga tu tarjeta</span></a></li>
+                        <li><a href="noticias.html" class="flex items-center hover:text-sky-200 transition-colors duration-200">
+                                <i class="fi fi-rs-newspaper-open w-5 h-5 mr-1"></i><span>Noticias</span></a></li>
+                    </ul>
+                </nav>
+            </div>
+            <div class="flex items-center space-x-4">
+                <i data-lucide="globe-2" class="w-5 h-5"></i>
+
+                <button
+                    class="bg-white text-sky-600 py-2 px-4 rounded-full hover:bg-sky-100 transition-colors duration-200 font-semibold" onclick="window.location.href='login.html';">Iniciar
+                    sesión<i class="fi fi-rs-user w-5 h-5 mr-1 ml-1 "></i></button>
+                <button data-collapse-toggle="navbar-collapse" type="button"
+                    class="inline-flex items-center p-2 w-10 h-10 justify-center text-sm text-white rounded-lg md:hidden hover:bg-sky-300 focus:outline-none focus:ring-2 focus:ring-sky-200"
+                    aria-controls="navbar-collapse" aria-expanded="false" id="menu-button">
+                    <span class="sr-only">Open main menu</span>
+                    <svg class="w-5 h-5" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none"
+                        viewBox="0 0 17 14">
+                        <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            d="M1 1h15M1 7h15M1 13h15" />
+                    </svg>
+                </button>
+            </div>
+        </div>
+        <nav class="md:hidden hidden" id="navbar-collapse">
+            <ul class="space-y-4 p-4">
+                <li><a href="nosotros.html" class="block text-white hover:bg-sky-500 rounded py-2 px-3"><i
+                            class="fi fi-rs-users-alt w-5 h-5 mr-1"></i> Nosotros</a></li>
+                <li><a href="Servicios.html" class="block text-white hover:bg-sky-500 rounded py-2 px-3"><i
+                            class="fi fi-rs-steering-wheel w-5 h-5 mr-1"></i> Servicios</a></li>
+                <li><a href="ayuda.html" class="block text-white hover:bg-sky-500 rounded py-2 px-3"><i
+                            class="fi fi-rs-interrogation w-5 h-5 mr-1"></i> Ayuda</a></li>
+                <li><a href="#" class="block text-white hover:bg-sky-500 rounded py-2 px-3"><i
+                            class="fi fi-rs-employee-man w-5 h-5 mr-1"></i> Trabaja con nosotros</a></li>
+                <li><a href="#" class="block text-white hover:bg-sky-500 rounded py-2 px-3"><i
+                            class="fi fi-rs-donate w-5 h-5 mr-1"></i> Recarga tu tarjeta</a></li>
+                <li><a href="noticias.html" class="block text-white hover:bg-sky-500 rounded py-2 px-3">
+                        <i class="fi fi-rs-newspaper-open w-5 h-5 mr-1"></i> Noticias</a></li>
+            </ul>
+        </nav>
+    </header>
+
+
+    <section class="py-12 bg-gray-100">
+        <div class="container mx-auto mt-20">
+            <h2 class="text-3xl font-bold text-center mb-8">Preguntas frecuentes</h2>
+            <div class="flex flex-col md:flex-row">
+                <!-- FAQ Accordion -->
+                <div class="w-full md:w-2/3">
+                    <div id="accordion-collapse" data-accordion="collapse">
+                        <h2 id="accordion-collapse-heading-1">
+                            <button type="button" class="flex items-center justify-between w-full p-5 font-medium text-left text-gray-500 border border-b-0 border-gray-200 rounded-t-xl focus:ring-4 focus:ring-gray-200 hover:bg-gray-100" data-accordion-target="#accordion-collapse-body-1" aria-expanded="false" aria-controls="accordion-collapse-body-1">
+                                La tarjeta tiene fecha de vencimiento?
+                                <svg data-accordion-icon class="w-6 h-6 transition-transform duration-300 rotate-0" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4v16m8-8H4" />
+                                </svg>
+                            </button>
+                        </h2>
+                        <div id="accordion-collapse-body-1" class="hidden" aria-labelledby="accordion-collapse-heading-1">
+                            <div class="p-5 text-gray-500">
+                                No. La tarjeta no tiene fecha de vencimiento después de haber sido adquirida.
+                                Nota: Si tuviera alguna pregunta sobre la vigencia de su tarjeta, sírvase en contactarnos.
+                            </div>
+                        </div>
+    
+                        <h2 id="accordion-collapse-heading-2">
+                            <button type="button" class="flex items-center justify-between w-full p-5 font-medium text-left text-gray-500 border border-b-0 border-gray-200 hover:bg-gray-100 focus:ring-4 focus:ring-gray-200" data-accordion-target="#accordion-collapse-body-2" aria-expanded="false" aria-controls="accordion-collapse-body-2">
+                                Qué es el medio pasaje o pasaje diferenciado para estudiantes universitarios?
+                                <svg data-accordion-icon class="w-6 h-6 transition-transform duration-300 rotate-0" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4v16m8-8H4" />
+                                </svg>
+                            </button>
+                        </h2>
+                        <div id="accordion-collapse-body-2" class="hidden" aria-labelledby="accordion-collapse-heading-2">
+                            <div class="p-5 text-gray-500">
+                                El medio pasaje es un beneficio que permite a los estudiantes universitarios acceder al transporte público pagando solo el 50% del precio regular. Está respaldado por la Ley Universitaria N° 30220, promulgada en 2014.
+                            </div>
+                        </div>
+
+                        <h2 id="accordion-collapse-heading-3">
+                            <button type="button" class="flex items-center justify-between w-full p-5 font-medium text-left text-gray-500 border border-b-0 border-gray-200 hover:bg-gray-100 focus:ring-4 focus:ring-gray-200" data-accordion-target="#accordion-collapse-body-3" aria-expanded="false" aria-controls="accordion-collapse-body-3">
+                                Como recargamos nuestra tarjeta?
+                                <svg data-accordion-icon class="w-6 h-6 transition-transform duration-300 rotate-0" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4v16m8-8H4" />
+                                </svg>
+                            </button>
+                        </h2>
+                        <div id="accordion-collapse-body-3" class="hidden" aria-labelledby="accordion-collapse-heading-3">
+                            <div class="p-5 text-gray-500">
+                                Podemos recargar nuestra tarjeta en todas nuestros paraderos. es recomendable recargar nuestras tarjetas una vez por semana, por la cantidad de viajes que vayamos a realizar.
+
+tambien se puede recargar en nuestra plataforma virtual de forma rápida, ahorraremos tiempo, y reduciremos el estrés durante nuestros traslados.
+
+Recuerda: El importe máximo a recargar es de 100 soles.
+                            </div>
+                        </div>
+                    </div>
+                </div>
+    
+                <!-- Illustration and CTA Form -->
+                <div class="w-full md:w-1/3 mt-8 md:mt-0 md:pl-8">
+                    <img src="img/Designer.jpeg" alt="Illustration related to FAQs" class="mb-6 w-full h-auto"/>
+                    <h3 class="text-xl font-semibold mb-4">Cual es tu pregunta?</h3>
+                    <form id="question-form">
+                        <input type="text" id="question-input" placeholder="tu pregunta..." required class="p-3 border rounded w-full mb-4"/>
+                        <button type="button" id="search-button" class="w-full bg-blue-500 text-white py-3 rounded hover:bg-blue-600">Buscar</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+
+    
+
+ 
+    
+   
+
+
+   
+
+
+
+
+
+
+
+   
+
+    <footer class="bg-sky-700 text-white mt-4">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <div class="space-y-6">
+                    <h2 class="text-3xl font-bold">ETUCHISA</h2>
+                    <p class="text-gray-300">Viajes seguros y accesibles a tu puerta en todo Perú.</p>
+                    <h3 class="text-lg font-semibold mb-4">Redes sociales</h3>
+
+                    <a href="https://www.facebook.com/etuchisa.oficial/?locale=es_LA "target="_blank">
+                        <i class="fab cursor-pointer fa-facebook-f"
+                            style="font-size: 30px; margin: 0 10px; transition: transform 0.3s;"
+                            onmouseover="this.style.transform='scale(1.2)'"
+                            onmouseout="this.style.transform='scale(1)'"></i>
+                    </a>
+                    <a href="https://www.instagram.com/etuchisa.oficial/reels/?hl=da"target="_blank">
+                        <i class="fab fa-instagram" style="font-size: 30px; margin: 0 10px; transition: transform 0.3s;"
+                            onmouseover="this.style.transform='scale(1.2)'"
+                            onmouseout="this.style.transform='scale(1)'"></i>
+                    </a>
+                    <a href="https://www.tiktok.com/@etuchisa.oficial?fbclid=IwY2xjawF1QA1leHRuA2FlbQIxMAABHe-bjfinZ9CuMBFO3-I3wl86Ifz_S-IvwkXv_jqcBV6WGoydhQ07i31Hbg_aem_ngfdFMLPQtmExnS_GIdAAQ"
+                        target="_blank">
+                        <i class="fab cursor-pointer fa-tiktok"
+                            style="font-size: 30px; margin: 0 10px; transition: transform 0.3s;"
+                            onmouseover="this.style.transform='scale(1.2)'"
+                            onmouseout="this.style.transform='scale(1)'"></i>
+                    </a>
+                    <div class="flex space-x-4">
+                        <a href="#" class="text-gray-400 hover:text-white">
+                            <i data-lucide="facebook" class="w-6 h-6"></i>
+                        </a>
+                        <a href="#" class="text-gray-400 hover:text-white">
+                            <i data-lucide="twitter" class="w-6 h-6"></i>
+                        </a>
+                        <a href="#" class="text-gray-400 hover:text-white">
+                            <i data-lucide="instagram" class="w-6 h-6"></i>
+                        </a>
+                    </div>
+                </div>
+                <div>
+                    <h3 class="text-lg font-semibold mb-4">Enlaces rápidos</h3>
+                    <ul class="space-y-2">
+                        <li><a href="terminos.html" class="text-gray-300 hover:text-white"><i
+                            class="fa fa-angle-right mr-2"></i>Términos de uso</a></li>                        
+                        <li><a href="politicaprivacidad.html" class="text-gray-300 hover:text-white"><i
+                                    class="fa fa-angle-right mr-2"></i>Política de privacidad</a></li>
+                        <li><a href="ayuda.html" class="text-gray-300 hover:text-white"><i
+                                    class="fa fa-angle-right mr-2"></i>Servicio de asistencia</a></li>
+                        <li><a href="preguntas.html" class="text-gray-300 hover:text-white"><i
+                                    class="fa fa-angle-right mr-2"></i>Preguntas frecuentes</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h3 class="text-lg font-semibold mb-4">Informacion</h3>
+                    <ul class="space-y-2">
+                        <p><i class="fa fa-phone-alt mr-2"></i>+51 999 999 999</p>
+                    <p><i class="fa fa-map-marker-alt mr-2"></i>Villa el Salvador, Peru · Puente Piedra, Peru</p>
+                    <p><i class="fa fa-envelope mr-2"></i>etuchisa.grupo5@gmail.com</p>
+                    </ul>
+                </div>
+            </div>
+            <div class="mt-12 pt-8 border-t border-gray-700">
+                <div class="text-center sm:flex sm:justify-between sm:text-left">
+                    <p class="text-sm text-gray-400">&copy; 2024 ETUCHISA</p>
+                    <p class="mt-2 text-sm text-gray-400 sm:mt-0">
+                        ETUCHISA brinda servicios de tecnología de la información solamente. Los servicios de transporte
+                        están a cargo de terceros independientes.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <script src="js/menu.js"></script>
+    
+<script src="js/carrusel.js"> </script>
+
+<script src="js/preguntas.js"> </script>
+
+</body>
+
+</html>

@@ -1,0 +1,330 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nuestro Conductores</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://unpkg.com/lucide-react/dist/index.umd.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <link rel='stylesheet'href='https://cdn-uicons.flaticon.com/2.6.0/uicons-regular-straight/css/uicons-regular-straight.css'>
+    <style>
+/* Sección Hero */
+.hero {
+  position: relative;
+  text-align: center;
+  color: white;
+  padding: 150px 20px;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  min-height: 60vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.hero::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5); /* Fondo oscuro semitransparente */
+  z-index: -1;
+}
+
+.hero-content {
+  position: relative;
+  z-index: 1;
+  max-width: 800px;
+  text-align: center;
+}
+
+.hero h1 {
+  font-size: 48px;
+  font-weight: bold;
+  margin-bottom: 20px;
+}
+
+.hero p {
+  font-size: 20px;
+  line-height: 1.6;
+}
+
+/* Sección de Conductores */
+.conductores-section {
+  padding: 60px 20px;
+  background-color: #f5f7fa;
+  color: #121f33;
+}
+
+.container-conductores {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.conductor-card {
+  background-color: #ffffff;
+  border-radius: 10px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  margin-bottom: 30px;
+  flex: 0 1 calc(33.333% - 20px); /* 3 columnas con espacio entre ellas */
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+.conductor-card img {
+  width: 100%;
+  height: 250px; /* Tamaño fijo para las imágenes */
+  object-fit: cover;
+  border-bottom: 2px solid #0275d8;
+}
+
+.conductor-info {
+  padding: 20px;
+}
+
+.conductor-info h2 {
+  font-size: 24px;
+  margin-bottom: 10px;
+}
+
+.conductor-info p {
+  font-size: 16px;
+  margin-bottom: 20px;
+}
+
+.conductor-info ul {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+}
+
+.conductor-info ul li {
+  margin-bottom: 10px;
+  font-size: 16px;
+}
+
+/* Ajustes para pantallas pequeñas */
+@media (max-width: 768px) {
+  .conductor-card {
+    flex: 0 1 100%; /* Tarjetas ocupan todo el ancho en pantallas pequeñas */
+    margin-bottom: 20px;
+  }
+
+  .conductor-card img {
+    height: auto; /* Ajuste de la imagen en pantallas pequeñas */
+  }
+}
+
+    </style>
+</head>
+<body>
+      <!-- Header -->
+      <header class="fixed z-50 w-full bg-sky-600 text-white shadow-2xl">
+        <div class="w-full max-w-screen-xl mx-auto px-4 py-3 flex items-center justify-between">
+            <div class="flex items-center space-x-8">
+                <div class="logo">
+                    <a href="index.html">
+                        <h1 class="text-3xl font-bold tracking-wider">ETUCHISA</h1>
+                    </a>
+                </div>
+                <nav class="hidden md:block">
+                    <ul class="flex space-x-6">
+                        <li><a href="nosotros.html" class="flex items-center hover:text-sky-200 transition-colors duration-200"><i
+                                    class="fi fi-rs-users-alt w-5 h-5 mr-1"></i><span>Nosotros</span></a></li>
+                        <li><a href="Servicios.html" class="flex items-center hover:text-sky-200 transition-colors duration-200"><i
+                                    class="fi fi-rs-steering-wheel w-5 h-5 mr-1"></i><span>Servicios</span></a></li>
+                        <li><a href="ayuda.html" class="flex items-center hover:text-sky-200 transition-colors duration-200"><i
+                                    class="fi fi-rs-interrogation w-5 h-5 mr-1"></i><span>Ayuda</span></a></li>
+                        <li><a href="trabaja.html" class="flex items-center hover:text-sky-200 transition-colors duration-200"><i
+                                    class="fi fi-rs-employee-man w-5 h-5 mr-1"></i><span>Trabaja con nosotros</span></a>
+                        </li>
+                        <li><a href="recargar.html" class="flex items-center hover:text-sky-200 transition-colors duration-200"><i
+                                    class="fi fi-rs-donate w-5 h-5 mr-1"></i><span>Recarga tu tarjeta</span></a></li>
+                        <li><a href="noticias.html" class="flex items-center hover:text-sky-200 transition-colors duration-200">
+                                <i class="fi fi-rs-newspaper-open w-5 h-5 mr-1"></i><span>Noticias</span></a></li>
+                    </ul>
+                </nav>
+            </div>
+            <div class="flex items-center space-x-4">
+                <i data-lucide="globe-2" class="w-5 h-5"></i>
+
+                <button
+                    class="bg-white text-sky-600 py-2 px-4 rounded-full hover:bg-sky-100 transition-colors duration-200 font-semibold" onclick="window.location.href='login.html';">Iniciar
+                    sesión<i class="fi fi-rs-user w-5 h-5 mr-1 ml-1 "></i></button>
+                <button data-collapse-toggle="navbar-collapse" type="button"
+                    class="inline-flex items-center p-2 w-10 h-10 justify-center text-sm text-white rounded-lg md:hidden hover:bg-sky-300 focus:outline-none focus:ring-2 focus:ring-sky-200"
+                    aria-controls="navbar-collapse" aria-expanded="false" id="menu-button">
+                    <span class="sr-only">Open main menu</span>
+                    <svg class="w-5 h-5" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none"
+                        viewBox="0 0 17 14">
+                        <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            d="M1 1h15M1 7h15M1 13h15" />
+                    </svg>
+                </button>
+            </div>
+        </div>
+        <nav class="md:hidden hidden" id="navbar-collapse">
+            <ul class="space-y-4 p-4">
+                <li><a href="nosotros.html" class="block text-white hover:bg-sky-500 rounded py-2 px-3"><i
+                            class="fi fi-rs-users-alt w-5 h-5 mr-1"></i> Nosotros</a></li>
+                <li><a href="Servicios.html" class="block text-white hover:bg-sky-500 rounded py-2 px-3"><i
+                            class="fi fi-rs-steering-wheel w-5 h-5 mr-1"></i> Servicios</a></li>
+                <li><a href="ayuda.html" class="block text-white hover:bg-sky-500 rounded py-2 px-3"><i
+                            class="fi fi-rs-interrogation w-5 h-5 mr-1"></i> Ayuda</a></li>
+                <li><a href="#" class="block text-white hover:bg-sky-500 rounded py-2 px-3"><i
+                            class="fi fi-rs-employee-man w-5 h-5 mr-1"></i> Trabaja con nosotros</a></li>
+                <li><a href="#" class="block text-white hover:bg-sky-500 rounded py-2 px-3"><i
+                            class="fi fi-rs-donate w-5 h-5 mr-1"></i> Recarga tu tarjeta</a></li>
+                <li><a href="noticias.html" class="block text-white hover:bg-sky-500 rounded py-2 px-3">
+                        <i class="fi fi-rs-newspaper-open w-5 h-5 mr-1"></i> Noticias</a></li>
+            </ul>
+        </nav>
+    </header>
+  <!-- Body -->  
+  <!-- Sección Hero -->
+  <section class="hero" style="background-image: url('img/EtuchisaConductores.jpg');">
+    <div class="hero-content">
+      <h1>Nuestros Conductores</h1>
+      <p>Conozca a los conductores que garantizan un servicio de transporte seguro y eficiente en ETUCHISA.</p>
+    </div>
+  </section>
+
+  <!-- Sección de Conductores -->
+  <section class="conductores-section">
+    <div class="container-conductores">
+      
+      <!-- Conductor 1 -->
+      <div class="conductor-card">
+        <img src="img/CarlosH.jpg" alt="Carlos Hurtado">
+        <div class="conductor-info">
+          <h2>Carlos Ramses Hurtado Quispe</h2>
+          <p>Lleva más de 10 años trabajando en ETUCHISA, asegurando un viaje placentero.</p>
+          <ul>
+            <li><strong>Edad:</strong> 45 años</li>
+            <li><strong>Años de experiencia:</strong> 15 años</li>
+            <li><strong>Unidad:</strong> Autobús grande</li>
+            <li><strong>Placa:</strong> ABC-1234</li>
+            <li><strong>Antigüedad de la unidad:</strong> 5 años</li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- Conductor 2 -->
+      <div class="conductor-card">
+        <img src="img/MariaG.jpg" alt="María Gomez">
+        <div class="conductor-info">
+          <h2>Maria Carmen Gomez Ruiz</h2>
+          <p>Con 8 años de experiencia en ETUCHISA, siempre prioriza la seguridad y comodidad de los pasajeros.</p>
+          <ul>
+            <li><strong>Edad:</strong> 38 años</li>
+            <li><strong>Años de experiencia:</strong> 12 años</li>
+            <li><strong>Unidad:</strong> Microbús adaptado</li>
+            <li><strong>Placa:</strong> XYZ-5678</li>
+            <li><strong>Antigüedad de la unidad:</strong> 3 años</li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- Conductor 3 -->
+      <div class="conductor-card">
+        <img src="img/JuanP.jpg" alt="Juan Perez">
+        <div class="conductor-info">
+          <h2>Juan Daniel Perez Trejo</h2>
+          <p>Experto conductor con más de 20 años en el transporte urbano, siempre puntual y confiable.</p>
+          <ul>
+            <li><strong>Edad:</strong> 50 años</li>
+            <li><strong>Años de experiencia:</strong> 20 años</li>
+            <li><strong>Unidad:</strong> Autobús mediano</li>
+            <li><strong>Placa:</strong> LMN-9876</li>
+            <li><strong>Antigüedad de la unidad:</strong> 7 años</li>
+          </ul>
+        </div>
+      </div>
+
+    </div>
+  </section>
+  <!-- footer -->  
+  <footer class="bg-sky-700 text-white mt-4">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            <div class="space-y-6">
+                <h2 class="text-3xl font-bold">ETUCHISA</h2>
+                <p class="text-gray-300">Viajes seguros y accesibles a tu puerta en todo Perú.</p>
+                <h3 class="text-lg font-semibold mb-4">Redes sociales</h3>
+
+                <a href="https://www.facebook.com/etuchisa.oficial/?locale=es_LA "target="_blank">
+                    <i class="fab cursor-pointer fa-facebook-f"
+                        style="font-size: 30px; margin: 0 10px; transition: transform 0.3s;"
+                        onmouseover="this.style.transform='scale(1.2)'"
+                        onmouseout="this.style.transform='scale(1)'"></i>
+                </a>
+                <a href="https://www.instagram.com/etuchisa.oficial/reels/?hl=da"target="_blank">
+                    <i class="fab fa-instagram" style="font-size: 30px; margin: 0 10px; transition: transform 0.3s;"
+                        onmouseover="this.style.transform='scale(1.2)'"
+                        onmouseout="this.style.transform='scale(1)'"></i>
+                </a>
+                <a href="https://www.tiktok.com/@etuchisa.oficial?fbclid=IwY2xjawF1QA1leHRuA2FlbQIxMAABHe-bjfinZ9CuMBFO3-I3wl86Ifz_S-IvwkXv_jqcBV6WGoydhQ07i31Hbg_aem_ngfdFMLPQtmExnS_GIdAAQ"
+                    target="_blank">
+                    <i class="fab cursor-pointer fa-tiktok"
+                        style="font-size: 30px; margin: 0 10px; transition: transform 0.3s;"
+                        onmouseover="this.style.transform='scale(1.2)'"
+                        onmouseout="this.style.transform='scale(1)'"></i>
+                </a>
+                <div class="flex space-x-4">
+                    <a href="#" class="text-gray-400 hover:text-white">
+                        <i data-lucide="facebook" class="w-6 h-6"></i>
+                    </a>
+                    <a href="#" class="text-gray-400 hover:text-white">
+                        <i data-lucide="twitter" class="w-6 h-6"></i>
+                    </a>
+                    <a href="#" class="text-gray-400 hover:text-white">
+                        <i data-lucide="instagram" class="w-6 h-6"></i>
+                    </a>
+                </div>
+            </div>
+            <div>
+                <h3 class="text-lg font-semibold mb-4">Enlaces rápidos</h3>
+                <ul class="space-y-2">
+                    <li><a href="terminos.html" class="text-gray-300 hover:text-white"><i
+                        class="fa fa-angle-right mr-2"></i>Términos de uso</a></li>                        
+                    <li><a href="politicaprivacidad.html" class="text-gray-300 hover:text-white"><i
+                                class="fa fa-angle-right mr-2"></i>Política de privacidad</a></li>
+                    <li><a href="ayuda.html" class="text-gray-300 hover:text-white"><i
+                                class="fa fa-angle-right mr-2"></i>Servicio de asistencia</a></li>
+                    <li><a href="preguntas.html" class="text-gray-300 hover:text-white"><i
+                                class="fa fa-angle-right mr-2"></i>Preguntas frecuentes</a></li>
+                </ul>
+            </div>
+            <div>
+                <h3 class="text-lg font-semibold mb-4">Informacion</h3>
+                <ul class="space-y-2">
+                  <p><i class="fa fa-phone-alt mr-2"></i>+51 999 999 999</p>
+                  <p><i class="fa fa-map-marker-alt mr-2"></i>Villa el Salvador, Peru · Puente Piedra, Peru</p>
+                  <p><i class="fa fa-envelope mr-2"></i>etuchisa.grupo5@gmail.com</p>
+                </ul>
+            </div>
+        </div>
+        <div class="mt-12 pt-8 border-t border-gray-700">
+            <div class="text-center sm:flex sm:justify-between sm:text-left">
+                <p class="text-sm text-gray-400">&copy; 2024 ETUCHISA</p>
+                <p class="mt-2 text-sm text-gray-400 sm:mt-0">
+                    ETUCHISA brinda servicios de tecnología de la información solamente. Los servicios de transporte
+                    están a cargo de terceros independientes.
+                </p>
+            </div>
+        </div>
+    </div>
+</footer>    
+</body>
+</html>

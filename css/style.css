@@ -1,0 +1,438 @@
+/*Nosotros-encabezadio*/
+.dropdown {
+    display: none; /* Oculta el dropdown por defecto */
+    position: absolute; /* Asegúrate de que el dropdown se superponga correctamente */
+    background-color: rgb(27, 144, 223); /* Color de fondo del dropdown */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Sombra para el dropdown */
+    z-index: 1; /* Asegura que el dropdown esté en la parte superior */
+}
+
+li:hover .dropdown {
+    display: block; /* Muestra el dropdown al pasar el mouse */
+}
+
+.dropdown ul {
+    list-style: none; /* Elimina el estilo de la lista */
+    padding: 0; /* Elimina el padding */
+    margin: 0; /* Elimina el margen */
+}
+
+.dropdown li {
+    padding: 10px; /* Espaciado para cada elemento del dropdown */
+}
+
+.dropdown li a {
+    color: rgb(255, 255, 255); /* Color del texto */
+    text-decoration: none; /* Elimina el subrayado */
+}
+
+.dropdown li a:hover {
+    background-color: rgb(27, 144, 223); /* Cambia el fondo al pasar el mouse */
+}
+/*Historia*/
+.hist{
+    width: 90%;
+    margin: 20px auto;
+    padding: 40px 80px;
+    background-color: #ffffff;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 110, 255, 0.1);
+}
+.contenido{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    flex-direction: row-reverse;
+}
+.imgWrapper4{
+    flex: 1;
+    margin-left: 10px;
+    overflow: hidden;
+}
+.imgWrapper4 img{
+    max-width: 100%;
+    height: auto;
+    display: block;
+    transition: 0.5s ease;
+}
+.imgWrapper4 :hover img{
+    transform: scale(1.2);
+}
+.about-text4{
+    flex: 1;
+}
+.about-text4 h1{
+    font-size: 40px;
+    margin-bottom: 30px;
+    color: #000000;
+    display: inline-block;
+    position: relative;
+    padding-left: 90px;
+}
+
+/*NOSOTROS*/
+/*quienes somos*/
+.heading{
+    width: 90%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    text-align: center;
+}
+.heading h1{
+    font-size: 50px;
+    color: black;
+    margin-bottom: 25px;
+    position: relative;
+    margin: 50px;
+}
+.heading h1::after{
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 4px;
+    display: block;
+    margin: 0 auto;
+    background-color: rgb(27, 144, 223);
+}
+.heading p{
+    font-size: 18px;
+    color: #000000;
+    margin-bottom: 35px;
+}
+/*MISION*/
+.primary {
+    width: 90%;
+    margin: 20px auto; /* Un poco de margen alrededor de la sección */
+    padding: 20px -10px; /* Reduce el padding interno */
+    background-color: #ffffff; /* Color de fondo */
+    border-radius: 10px; /* Opcional: bordes redondeados */
+    box-shadow: 0 4px 8px rgba(0, 110, 255, 0.1); /* Sombra para mejor apariencia */
+}
+
+.mission{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+}
+.imgWrapper{
+    flex: 1;
+    margin-right: 50px;
+    overflow: hidden;
+}
+.imgWrapper img{
+    max-width: 100%;
+    height: auto;
+    display: block;
+    transition: 0.5s ease;
+}
+.imgWrapper:hover img{
+    transform: scale(1.2);
+}
+.about-text{
+    flex: 1;
+}
+.about-text h1{
+    font-size: 40px;
+    margin-bottom: 30px;
+    color: #333;
+    display: inline-block;
+    position: relative;
+    padding-left: 90px; /* Espacio reservado para la línea a la izquierda */
+}
+
+.about-text h1 span::before {
+    content: "";
+    display: block;
+    position: absolute;
+    top: 50%; /* Centra verticalmente la línea */
+    left: 0; /* La línea comienza justo a la izquierda del texto */
+    transform: translateY(-50%); /* Ajuste vertical */
+    background: #383f47; /* Color de la línea */
+    width: 70px; /* Ancho de la línea */
+    height: 3px; /* Grosor de la línea */
+}
+
+.about-text p{
+    font-size: 18px;
+    line-height: 1.5;
+    color: #000000;
+}
+.three .read-more{
+    display: block;
+    padding: 10px 20px;
+    background-color: rgb(27, 144, 223);
+    font-size: 19px;
+    text-decoration: none;
+    border-radius: 15px;
+    margin: 15px;
+    transition: 0.3s ease;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+.three .read-more:hover{
+    display: block;
+    margin: 15px auto;
+    background-color: #ffffff;
+    border: 2px solid #000000;
+}
+
+@media screen and (max-width: 768px){
+    .heading{
+        padding: 0px 20px;
+    }
+    .heading h1{
+        font-size: 36px;
+    }
+    .heading p{
+        font-size: 17px;
+        margin-bottom: 0px;
+    }
+    .primary{
+        padding: 0px;
+    }
+    .mission{
+        padding: 20px;
+        flex-direction: column;
+    }
+    .imgWrapper{
+        margin-right: 0px;
+        margin-bottom: 20px;
+    }
+    .about-text p{
+        padding: 0px;
+        font-stretch: 16px;
+    }
+    .about-text .read-more{
+        font-size: 16px;
+    }
+}
+
+/*VISION*/
+.secondary{
+    width: 90%;
+    margin: 20px auto;
+    padding: 40px 80px;
+    background-color: #ffffff;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 110, 255, 0.1);
+}
+.vision{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    flex-direction: row-reverse;
+}
+.imgWrapper2{
+    flex: 1;
+    margin-left: 10px;
+    overflow: hidden;
+}
+.imgWrapper2 img{
+    max-width: 100%;
+    height: auto;
+    display: block;
+    transition: 0.5s ease;
+}
+.imgWrapper2:hover img{
+    transform: scale(1.2);
+}
+.about-text2{
+    flex: 1;
+}
+.about-text2 h1{
+    font-size: 40px;
+    margin-bottom: 30px;
+    color: #000000;
+    display: inline-block;
+    position: relative;
+    padding-left: 90px;
+}
+
+
+.about-text2 h1 span::before {
+    content: "";
+    display: block;
+    position: absolute;
+    top: 50%; /* Centra verticalmente la línea */
+    left: 0%; /* La línea comienza justo a la izquierda del texto */
+    transform: translateY(-50%); /* Ajuste vertical */
+    background: #383f47; /* Color de la línea */
+    width: 70px; /* Ancho de la línea */
+    height: 3px; /* Grosor de la línea */
+}
+
+.about-text2 p{
+    font-size: 18px;
+    line-height: 1.5;
+    color: #000000;
+}
+.about-text2 .read-more{
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: rgb(27, 144, 223);
+    font-size: 19px;
+    text-decoration: none;
+    border-radius: 25px;
+    margin-top: 15px;
+    transition: 0.3s ease;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+.about-text2 .read-more:hover{
+    background-color: #ffffff;
+    border: 2px solid #000000;
+}
+
+/*VALORES*/
+.three{
+    width: 100%;
+    background-color: #ffffff;
+}
+.title h1{
+    text-align: center;
+    padding-top: 50px;
+    font-size: 42px;
+}
+.title h1::after{
+    content: "";
+    height: 4px;
+    width: 230px;
+    background-color: rgb(27, 144, 223);
+    display: block;
+    margin: auto;
+}
+.values{
+    width: 85%;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    flex-wrap: wrap;
+    margin: 75px auto;
+    text-align: center;
+}
+.card{
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-direction: column;
+    margin: 0px 20px;
+    padding: 20px 20px;
+    background-color: #ffffff;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: transform 0.5s, background 0.5s;
+}
+
+.values > .card1 {
+    width: 100%; /* Ajusta el ancho para que las tarjetas ocupen menos espacio */
+    margin: 20px auto; /* Centra las tarjetas con margen automático */
+}
+
+.card1 {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-direction: column;
+    margin: 0px 50px;
+    padding: 20px 20px;
+    background-color: #ffffff;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: transform 0.5s, background 0.5s;
+    
+}
+
+
+.card:hover{
+    background-color: rgb(27, 144, 223);
+    color: #ffffff;
+    transform: scale(1.05);
+}
+.card1:hover{
+    background-color: rgb(27, 144, 223);
+    color: #ffffff;
+    transform: scale(1.05);
+}
+
+.card h2{
+    font-weight: 28px;
+    margin-bottom: 8px;
+}
+.card1 h2{
+    font-weight: 28px;
+    margin-bottom: 8px;
+}
+.card p{
+    font-size: 17px;
+    margin-bottom: 30px;
+    line-height: 1.5;
+    color: #000000;
+}
+.card1 p{
+    font-size: 17px;
+    margin-bottom: 30px;
+    line-height: 1.5;
+    color: #000000;
+}
+
+
+.card, .card1 {
+    width: calc(33% - 40px); /* Ajusta el ancho de las tarjetas para que haya espacio entre ellas */
+    margin: 20px 20px;
+}
+.values .card i{
+    font-size: 40px;
+    color: #001eff;
+}
+.values .card1 i{
+    font-size: 40px;
+    color: #001eff;
+}
+.card:hover i{
+    color: #ffffff;
+}
+.card1:hover i{
+    color: #ffffff;
+}
+.card:hover p{
+    color: #ffffff;
+}
+.card1:hover p{
+    color: #ffffff;
+}
+
+@media screen and (max-width: 940px){
+    .values{
+        display: flex;
+        flex-direction: column;
+    }
+    .card{
+        width: 85%;
+        display: flex;
+        margin: 20px 0px;
+    }
+}
+@media (min-width: 768px) {
+    .values {
+        justify-content: space-between;
+    }
+
+    .values > .card1 {
+        width: 40%;
+        margin: 20px auto; /* Centra las tarjetas en la fila inferior */
+    }
+}
+
+/*Conocenos*/
+.conocs h2 {
+    padding-top: 80px; /* Ajusta este valor según sea necesario */
+    text-align: center; /* Para centrar el texto, si lo deseas */
+}
+
+/*historia*/

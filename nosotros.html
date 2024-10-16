@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ETUCHISA-Nosotros</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://unpkg.com/lucide-react/dist/index.umd.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <link rel='stylesheet' href='https://cdn-uicons.flaticon.com/2.6.0/uicons-regular-straight/css/uicons-regular-straight.css'>
+    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+    <link rel="stylesheet" type="text/css" href="css/style.css">
+        <style>
+            .slider-container {
+                position: relative;
+                width: 100%;
+                max-width: 800px;
+                /* Ancho máximo */
+                margin: auto;
+                border-radius: 10px;
+                /* Bordes redondeados */
+                overflow: hidden;
+            }
+    
+            .slider-button {
+                background-color: rgba(255, 254, 254, 0.8);
+                /* Fondo blanco semi-transparente */
+                border-radius: 50%;
+                /* Bordes redondeados */
+                padding: 10px;
+                /* Espaciado interno */
+                box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+                /* Sombra */
+            }
+    
+            .slider-button:hover {
+                background-color: rgb(27, 144, 223);
+                /* Fondo blanco al pasar el mouse */
+            }
+        </style>
+    <style>
+        .slide {
+            width: calc(100% / 3);
+            flex-shrink: 0;
+            transition: transform 0.5s ease-in-out;
+        }
+    </style>
+</head>
+
+<body>
+    <header class="fixed z-50 w-full bg-sky-600 text-white shadow-2xl">
+        <div class="w-full max-w-screen-xl mx-auto px-4 py-3 flex items-center justify-between">
+            <div class="flex items-center space-x-8">
+                <div class="logo">
+                    <a href="index.html">
+                        <h1 class="text-3xl font-bold tracking-wider">ETUCHISA</h1>
+                    </a>
+                </div>
+                <nav class="hidden md:block">
+                    <ul class="flex space-x-6">
+                        <li><a href="nosotros.html" class="flex items-center hover:text-sky-200 transition-colors duration-200"><i
+                                    class="fi fi-rs-users-alt w-5 h-5 mr-1"></i><span>Nosotros</span></a></li>
+                        <li><a href="Servicios.html" class="flex items-center hover:text-sky-200 transition-colors duration-200"><i
+                                    class="fi fi-rs-steering-wheel w-5 h-5 mr-1"></i><span>Servicios</span></a></li>
+                        <li><a href="ayuda.html" class="flex items-center hover:text-sky-200 transition-colors duration-200"><i
+                                    class="fi fi-rs-interrogation w-5 h-5 mr-1"></i><span>Ayuda</span></a></li>
+                        <li><a href="trabaja.html" class="flex items-center hover:text-sky-200 transition-colors duration-200"><i
+                                    class="fi fi-rs-employee-man w-5 h-5 mr-1"></i><span>Trabaja con nosotros</span></a>
+                        </li>
+                        <li><a href="recargar.html" class="flex items-center hover:text-sky-200 transition-colors duration-200"><i
+                                    class="fi fi-rs-donate w-5 h-5 mr-1"></i><span>Recarga tu tarjeta</span></a></li>
+                        <li><a href="noticias.html" class="flex items-center hover:text-sky-200 transition-colors duration-200">
+                                <i class="fi fi-rs-newspaper-open w-5 h-5 mr-1"></i><span>Noticias</span></a></li>
+                    </ul>
+                </nav>
+            </div>
+            <div class="flex items-center space-x-4">
+                <i data-lucide="globe-2" class="w-5 h-5"></i>
+
+                <button
+                    class="bg-white text-sky-600 py-2 px-4 rounded-full hover:bg-sky-100 transition-colors duration-200 font-semibold" onclick="window.location.href='login.html';">Iniciar
+                    sesión<i class="fi fi-rs-user w-5 h-5 mr-1 ml-1 "></i></button>
+                <button data-collapse-toggle="navbar-collapse" type="button"
+                    class="inline-flex items-center p-2 w-10 h-10 justify-center text-sm text-white rounded-lg md:hidden hover:bg-sky-300 focus:outline-none focus:ring-2 focus:ring-sky-200"
+                    aria-controls="navbar-collapse" aria-expanded="false" id="menu-button">
+                    <span class="sr-only">Open main menu</span>
+                    <svg class="w-5 h-5" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none"
+                        viewBox="0 0 17 14">
+                        <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            d="M1 1h15M1 7h15M1 13h15" />
+                    </svg>
+                </button>
+            </div>
+        </div>
+        <nav class="md:hidden hidden" id="navbar-collapse">
+            <ul class="space-y-4 p-4">
+                <li><a href="nosotros.html" class="block text-white hover:bg-sky-500 rounded py-2 px-3"><i
+                            class="fi fi-rs-users-alt w-5 h-5 mr-1"></i> Nosotros</a></li>
+                <li><a href="Servicios.html" class="block text-white hover:bg-sky-500 rounded py-2 px-3"><i
+                            class="fi fi-rs-steering-wheel w-5 h-5 mr-1"></i> Servicios</a></li>
+                <li><a href="ayuda.html" class="block text-white hover:bg-sky-500 rounded py-2 px-3"><i
+                            class="fi fi-rs-interrogation w-5 h-5 mr-1"></i> Ayuda</a></li>
+                <li><a href="trabaja.html" class="block text-white hover:bg-sky-500 rounded py-2 px-3"><i
+                            class="fi fi-rs-employee-man w-5 h-5 mr-1"></i> Trabaja con nosotros</a></li>
+                <li><a href="recargar.html" class="block text-white hover:bg-sky-500 rounded py-2 px-3"><i
+                            class="fi fi-rs-donate w-5 h-5 mr-1"></i> Recarga tu tarjeta</a></li>
+                <li><a href="noticias.html" class="block text-white hover:bg-sky-500 rounded py-2 px-3">
+                        <i class="fi fi-rs-newspaper-open w-5 h-5 mr-1"></i> Noticias</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <div class="heading">
+        <h1>¿Quienes somos?</h1>
+        <p>Somos una de las compañías de transporte terrestre más conocidas de Lima, que además cuenta con más de 20 años de historia.</p>
+    </div>
+
+    <div class="hist">
+        <section class="contenido">
+            <div class="imgWrapper4">
+                <img src="img/antiguo.jpg" alt="">
+            </div>
+            <div class="about-text4">
+                <h1>His<span style="color: #008cff;">toria</span></h1>
+                <p>Etuchisa nació con el objetivo de brindar soluciones en ingeniería sanitaria y ambiental. Desde sus inicios, ha trabajado en proyectos de saneamiento y tratamiento de aguas, contribuyendo al desarrollo sostenible y mejorando la calidad de vida en diversas comunidades.
+                    Con el tiempo, la empresa ha crecido, ofreciendo servicios integrales y manteniéndose a la vanguardia con tecnología de punta. Hoy, Etuchisa sigue comprometida con la excelencia y la sostenibilidad, implementando soluciones eficientes y responsables en cada proyecto.</p>
+                <a href="historia.html" class="read-more">Saber más</a>
+                
+            </div>
+        </section>
+    </div>
+
+    <div class="primary">
+        <section class="mission">
+            <div class="imgWrapper">
+                <img src="img/img1.jpg" alt="Descripción de la misión">
+            </div>
+            <div class="about-text2">
+                <h1>Mis<span style="color: #008cff;">ión</span></h1>
+                <p>Nuestra misión es ofrecer un servicio de transporte seguro, eficiente y de calidad, satisfaciendo las necesidades de movilidad de la población. Nos comprometemos a contribuir al desarrollo urbano sostenible y a mejorar la conectividad con el menor impacto ambiental posible.</p>
+                <a href="conocenos.html" class="read-more">Saber más</a>
+            </div>
+        </section>
+    </div>
+    
+    <div class="secondary">
+    <section class="vision">
+            <div class="imgWrapper2">
+            <img src="img/img3.jpg" alt="">
+            </div>
+            <div class="about-text2">
+                <h1>Vis<span style="color: #008cff;">ión</span></h1>
+                <p>Convertirnos en la principal empresa de transporte en la región, reconocida por nuestra eficiencia, seguridad y compromiso con el desarrollo sostenible. Buscamos establecer un modelo de transporte que sea un referente de calidad y confianza para nuestros usuarios.</p>
+                <a href="conocenos.html" class="read-more">Saber más</a>
+            </div>
+    </section>
+    </div>
+    
+    <div class="three">
+        <div class="title">
+            <h1>Val<span style="color: #008cff;">ores</span></h1>
+        </div>
+        <div class="values">
+            <div class="card">
+                <i class="fa-solid fa-shield-halved"></i>
+                <h2>Seguridad</h2>
+                <p>Priorizamos la seguridad de nuestros pasajeros y colaboradores en cada operación.</p>
+            </div>
+            <div class="card">
+                <i class="fa-solid fa-gear"></i>
+                <h2>Eficiencia</h2>
+                <p>Nos esforzamos por ofrecer un servicio ágil y puntual, optimizando nuestros recursos.</p>
+            </div>
+            <div class="card">
+                <i class="fa-regular fa-handshake"></i>
+                <h2>Compromiso</h2>
+                <p>Nos comprometemos con el desarrollo sostenible y la mejora continua de nuestros servicios.</p>
+            </div>
+            <div class="card1">
+                <i class="fa-solid fa-check-to-slot"></i>
+                <h2>Calidad</h2>
+                <p>Mantenemos altos estándares de calidad en todas nuestras operaciones y servicios.</p>
+            </div>
+            <div class="card1">
+                <i class="fa-sharp-duotone fa-solid fa-face-saluting"></i>
+                <h2>Respeto</h2>
+                <p>Fomentamos un ambiente de respeto hacia nuestros pasajeros, empleados y la comunidad en general.</p>
+            </div>
+        </div>
+    </div>
+
+    <footer class="bg-sky-700 text-white mt-4">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <div class="space-y-6">
+                    <h2 class="text-3xl font-bold">ETUCHISA</h2>
+                    <p class="text-gray-300">Viajes seguros y accesibles a tu puerta en todo Perú.</p>
+                    <h3 class="text-lg font-semibold mb-4">Redes sociales</h3>
+
+                    <a href="https://www.facebook.com/etuchisa.oficial/?locale=es_LA "target="_blank">
+                        <i class="fab cursor-pointer fa-facebook-f"
+                            style="font-size: 30px; margin: 0 10px; transition: transform 0.3s;"
+                            onmouseover="this.style.transform='scale(1.2)'"
+                            onmouseout="this.style.transform='scale(1)'"></i>
+                    </a>
+                    <a href="https://www.instagram.com/etuchisa.oficial/reels/?hl=da"target="_blank">
+                        <i class="fab fa-instagram" style="font-size: 30px; margin: 0 10px; transition: transform 0.3s;"
+                            onmouseover="this.style.transform='scale(1.2)'"
+                            onmouseout="this.style.transform='scale(1)'"></i>
+                    </a>
+                    <a href="https://www.tiktok.com/@etuchisa.oficial?fbclid=IwY2xjawF1QA1leHRuA2FlbQIxMAABHe-bjfinZ9CuMBFO3-I3wl86Ifz_S-IvwkXv_jqcBV6WGoydhQ07i31Hbg_aem_ngfdFMLPQtmExnS_GIdAAQ"
+                        target="_blank">
+                        <i class="fab cursor-pointer fa-tiktok"
+                            style="font-size: 30px; margin: 0 10px; transition: transform 0.3s;"
+                            onmouseover="this.style.transform='scale(1.2)'"
+                            onmouseout="this.style.transform='scale(1)'"></i>
+                    </a>
+                    <div class="flex space-x-4">
+                        <a href="#" class="text-gray-400 hover:text-white">
+                            <i data-lucide="facebook" class="w-6 h-6"></i>
+                        </a>
+                        <a href="#" class="text-gray-400 hover:text-white">
+                            <i data-lucide="twitter" class="w-6 h-6"></i>
+                        </a>
+                        <a href="#" class="text-gray-400 hover:text-white">
+                            <i data-lucide="instagram" class="w-6 h-6"></i>
+                        </a>
+                    </div>
+                </div>
+                <div>
+                    <h3 class="text-lg font-semibold mb-4">Enlaces rápidos</h3>
+                    <ul class="space-y-2">
+                        <li><a href="terminos.html" class="text-gray-300 hover:text-white"><i
+                            class="fa fa-angle-right mr-2"></i>Términos de uso</a></li>                        
+                        <li><a href="politicaprivacidad.html" class="text-gray-300 hover:text-white"><i
+                                    class="fa fa-angle-right mr-2"></i>Política de privacidad</a></li>
+                        <li><a href="ayuda.html" class="text-gray-300 hover:text-white"><i
+                                    class="fa fa-angle-right mr-2"></i>Servicio de asistencia</a></li>
+                        <li><a href="preguntas.html" class="text-gray-300 hover:text-white"><i
+                                    class="fa fa-angle-right mr-2"></i>Preguntas frecuentes</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h3 class="text-lg font-semibold mb-4">Informacion</h3>
+                    <ul class="space-y-2">
+                        <p><i class="fa fa-phone-alt mr-2"></i>+51 999 999 999</p>
+                    <p><i class="fa fa-map-marker-alt mr-2"></i>Villa el Salvador, Peru · Puente Piedra, Peru</p>
+                    <p><i class="fa fa-envelope mr-2"></i>etuchisa.grupo5@gmail.com</p>
+                    </ul>
+                </div>
+            </div>
+            <div class="mt-12 pt-8 border-t border-gray-700">
+                <div class="text-center sm:flex sm:justify-between sm:text-left">
+                    <p class="text-sm text-gray-400">&copy; 2024 ETUCHISA</p>
+                    <p class="mt-2 text-sm text-gray-400 sm:mt-0">
+                        ETUCHISA brinda servicios de tecnología de la información solamente. Los servicios de transporte
+                        están a cargo de terceros independientes.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <script src="js/menu.js"></script>
+    
+    <script src="js/carrusel.js"> </script>
+</body>
+</html>

@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ETUCHISA</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://unpkg.com/lucide-react/dist/index.umd.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <link rel='stylesheet'
+        href='https://cdn-uicons.flaticon.com/2.6.0/uicons-regular-straight/css/uicons-regular-straight.css'>
+
+    <style>
+        .slider-container {
+            position: relative;
+            width: 100%;
+            max-width: 800px;
+            /* Ancho máximo */
+            margin: auto;
+            border-radius: 10px;
+            /* Bordes redondeados */
+            overflow: hidden;
+        }
+
+        .slider-image {
+            transition: opacity 0.5s ease-in-out;
+            /* Transición suave para la imagen */
+        }
+
+        .slider-button {
+            background-color: rgba(255, 254, 254, 0.8);
+            /* Fondo blanco semi-transparente */
+            border-radius: 50%;
+            /* Bordes redondeados */
+            padding: 10px;
+            /* Espaciado interno */
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+            /* Sombra */
+        }
+
+        .slider-button:hover {
+            background-color: rgb(27, 144, 223);
+            /* Fondo blanco al pasar el mouse */
+        }
+    </style>
+<style>
+    .slide {
+        width: calc(100% / 3);
+        flex-shrink: 0;
+        transition: transform 0.5s ease-in-out;
+    }
+</style>
+
+</head>
+
+<body>
+    <header class="fixed z-50 w-full bg-sky-600 text-white shadow-2xl">
+        <div class="w-full max-w-screen-xl mx-auto px-4 py-3 flex items-center justify-between">
+            <div class="flex items-center space-x-8">
+                <div class="logo">
+                    <a href="index.html">
+                        <h1 class="text-3xl font-bold tracking-wider">ETUCHISA</h1>
+                    </a>
+                </div>
+                <nav class="hidden md:block">
+                    <ul class="flex space-x-6">
+                        <li><a href="nosotros.html" class="flex items-center hover:text-sky-200 transition-colors duration-200"><i
+                                    class="fi fi-rs-users-alt w-5 h-5 mr-1"></i><span>Nosotros</span></a></li>
+                        <li><a href="Servicios.html" class="flex items-center hover:text-sky-200 transition-colors duration-200"><i
+                                    class="fi fi-rs-steering-wheel w-5 h-5 mr-1"></i><span>Servicios</span></a></li>
+                        <li><a href="ayuda.html" class="flex items-center hover:text-sky-200 transition-colors duration-200"><i
+                                    class="fi fi-rs-interrogation w-5 h-5 mr-1"></i><span>Ayuda</span></a></li>
+                        <li><a href="trabaja.html" class="flex items-center hover:text-sky-200 transition-colors duration-200"><i
+                                    class="fi fi-rs-employee-man w-5 h-5 mr-1"></i><span>Trabaja con nosotros</span></a>
+                        </li>
+                        <li><a href="recargar.html" class="flex items-center hover:text-sky-200 transition-colors duration-200"><i
+                                    class="fi fi-rs-donate w-5 h-5 mr-1"></i><span>Recarga tu tarjeta</span></a></li>
+                        <li><a href="noticias.html" class="flex items-center hover:text-sky-200 transition-colors duration-200">
+                                <i class="fi fi-rs-newspaper-open w-5 h-5 mr-1"></i><span>Noticias</span></a></li>
+                    </ul>
+                </nav>
+            </div>
+            <div class="flex items-center space-x-4">
+                <i data-lucide="globe-2" class="w-5 h-5"></i>
+
+                <button
+                    class="bg-white text-sky-600 py-2 px-4 rounded-full hover:bg-sky-100 transition-colors duration-200 font-semibold" onclick="window.location.href='login.html';">Iniciar
+                    sesión<i class="fi fi-rs-user w-5 h-5 mr-1 ml-1 "></i></button>
+                <button data-collapse-toggle="navbar-collapse" type="button"
+                    class="inline-flex items-center p-2 w-10 h-10 justify-center text-sm text-white rounded-lg md:hidden hover:bg-sky-300 focus:outline-none focus:ring-2 focus:ring-sky-200"
+                    aria-controls="navbar-collapse" aria-expanded="false" id="menu-button">
+                    <span class="sr-only">Open main menu</span>
+                    <svg class="w-5 h-5" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none"
+                        viewBox="0 0 17 14">
+                        <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            d="M1 1h15M1 7h15M1 13h15" />
+                    </svg>
+                </button>
+            </div>
+        </div>
+        <nav class="md:hidden hidden" id="navbar-collapse">
+            <ul class="space-y-4 p-4">
+                <li><a href="nosotros.html" class="block text-white hover:bg-sky-500 rounded py-2 px-3"><i
+                            class="fi fi-rs-users-alt w-5 h-5 mr-1"></i> Nosotros</a></li>
+                <li><a href="Servicios.html" class="block text-white hover:bg-sky-500 rounded py-2 px-3"><i
+                            class="fi fi-rs-steering-wheel w-5 h-5 mr-1"></i> Servicios</a></li>
+                <li><a href="ayuda.html" class="block text-white hover:bg-sky-500 rounded py-2 px-3"><i
+                            class="fi fi-rs-interrogation w-5 h-5 mr-1"></i> Ayuda</a></li>
+                <li><a href="trabaja.html" class="block text-white hover:bg-sky-500 rounded py-2 px-3"><i
+                            class="fi fi-rs-employee-man w-5 h-5 mr-1"></i> Trabaja con nosotros</a></li>
+                <li><a href="recargar.html" class="block text-white hover:bg-sky-500 rounded py-2 px-3"><i
+                            class="fi fi-rs-donate w-5 h-5 mr-1"></i> Recarga tu tarjeta</a></li>
+                <li><a href="noticias.html" class="block text-white hover:bg-sky-500 rounded py-2 px-3">
+                        <i class="fi fi-rs-newspaper-open w-5 h-5 mr-1"></i> Noticias</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <div style="text-align: center; padding: 20px; border: 1px solid #ccc; border-radius: 8px; background-color: #f9f9f9;">
+        <!-- Título principal -->
+        <h2 style="font-size: 32px; margin-bottom: 10px; ">NOTICIAS</h2>
+        
+        <!-- Subtítulo -->
+        <h2 class="text-3xl mt-10 font-extrabold tracking-tight text-gray-900 sm:text-4xl mb-4">COMUNICADO</h2>
+        
+        <!-- Breadcrumb de navegación -->
+        <nav style="margin-bottom: 20px;">
+            <a href="index.html" style="text-decoration: none; color: #007bff; margin: 0 10px;">Inicio</a> /
+            <a href="noticias.html" style="text-decoration: none; color: #007bff; margin: 0 10px;">Noticias</a> /
+            <a href="noticia4.html" style="text-decoration: none; color: #007bff; margin: 0 10px;">Comunicado</a>
+        </nav>
+        
+        <!-- Imagen (puedes cambiar la ruta de la imagen) -->
+        <img src="img/comunicado4.png" alt="Imagen Comunicado" style="width: 100%; max-width: 600px; height: auto; border-radius: 8px; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); display: block; margin: 0 auto;">
+    </div>
+    
+    
+
+ 
+    
+   
+
+
+    <section class="py-16 bg-gradient-to-b from-gray-50 to-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl font-extrabold tracking-tight text-gray-900 sm:text-4xl mb-4">NOTICIAS ETUCHISA</h2>
+                <p class="mt-3 max-w-3xl mx-auto text-lg text-gray-500">Últimas Noticias y novedades de ETUCHISA, mantente informado sobre las últimas innovaciones y logros de ETUCHISA en el sector del transporte.</p>
+            </div>
+    
+            <div class="relative mb-12">
+                <div class="overflow-hidden">
+                    <div id="carousel" class="flex">
+                        <!-- Slides-->
+                    </div>
+                </div>
+                <button id="prevBtn" class="absolute top-1/2 -left-4 transform -translate-y-1/2 bg-white rounded-full p-2 shadow-md hover:bg-sky-100 transition-colors duration-300" aria-label="Previous slide">
+                    <svg class="w-6 h-6 text-sky-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7" />
+                    </svg>
+                </button>
+                <button id="nextBtn" class="absolute top-1/2 -right-4 transform -translate-y-1/2 bg-white rounded-full p-2 shadow-md hover:bg-sky-100 transition-colors duration-300" aria-label="Next slide">
+                    <svg class="w-6 h-6 text-sky-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
+                    </svg>
+                </button>
+            </div>
+    
+            <div class="text-center">
+                <a href="noticias.html" class="inline-flex items-center px-6 py-3 border border-transparent text-base font-medium rounded-md shadow-sm text-white bg-sky-600 hover:bg-sky-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-sky-500 transition duration-300">Ver todas las noticias</a>
+            </div>
+        </div>
+    </section>
+
+
+
+
+
+
+
+   
+
+    <footer class="bg-sky-700 text-white mt-4">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <div class="space-y-6">
+                    <h2 class="text-3xl font-bold">ETUCHISA</h2>
+                    <p class="text-gray-300">Viajes seguros y accesibles a tu puerta en todo Perú.</p>
+                    <h3 class="text-lg font-semibold mb-4">Redes sociales</h3>
+
+                    <a href="https://www.facebook.com/etuchisa.oficial/?locale=es_LA "target="_blank">
+                        <i class="fab cursor-pointer fa-facebook-f"
+                            style="font-size: 30px; margin: 0 10px; transition: transform 0.3s;"
+                            onmouseover="this.style.transform='scale(1.2)'"
+                            onmouseout="this.style.transform='scale(1)'"></i>
+                    </a>
+                    <a href="https://www.instagram.com/etuchisa.oficial/reels/?hl=da"target="_blank">
+                        <i class="fab fa-instagram" style="font-size: 30px; margin: 0 10px; transition: transform 0.3s;"
+                            onmouseover="this.style.transform='scale(1.2)'"
+                            onmouseout="this.style.transform='scale(1)'"></i>
+                    </a>
+                    <a href="https://www.tiktok.com/@etuchisa.oficial?fbclid=IwY2xjawF1QA1leHRuA2FlbQIxMAABHe-bjfinZ9CuMBFO3-I3wl86Ifz_S-IvwkXv_jqcBV6WGoydhQ07i31Hbg_aem_ngfdFMLPQtmExnS_GIdAAQ"
+                        target="_blank">
+                        <i class="fab cursor-pointer fa-tiktok"
+                            style="font-size: 30px; margin: 0 10px; transition: transform 0.3s;"
+                            onmouseover="this.style.transform='scale(1.2)'"
+                            onmouseout="this.style.transform='scale(1)'"></i>
+                    </a>
+                    <div class="flex space-x-4">
+                        <a href="#" class="text-gray-400 hover:text-white">
+                            <i data-lucide="facebook" class="w-6 h-6"></i>
+                        </a>
+                        <a href="#" class="text-gray-400 hover:text-white">
+                            <i data-lucide="twitter" class="w-6 h-6"></i>
+                        </a>
+                        <a href="#" class="text-gray-400 hover:text-white">
+                            <i data-lucide="instagram" class="w-6 h-6"></i>
+                        </a>
+                    </div>
+                </div>
+                <div>
+                    <h3 class="text-lg font-semibold mb-4">Enlaces rápidos</h3>
+                    <ul class="space-y-2">
+                        <li><a href="terminos.html" class="text-gray-300 hover:text-white"><i
+                            class="fa fa-angle-right mr-2"></i>Términos de uso</a></li>                        
+                        <li><a href="politicaprivacidad.html" class="text-gray-300 hover:text-white"><i
+                                    class="fa fa-angle-right mr-2"></i>Política de privacidad</a></li>
+                        <li><a href="ayuda.html" class="text-gray-300 hover:text-white"><i
+                                    class="fa fa-angle-right mr-2"></i>Servicio de asistencia</a></li>
+                        <li><a href="preguntas.html" class="text-gray-300 hover:text-white"><i
+                                    class="fa fa-angle-right mr-2"></i>Preguntas frecuentes</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h3 class="text-lg font-semibold mb-4">Informacion</h3>
+                    <ul class="space-y-2">
+                        <p><i class="fa fa-phone-alt mr-2"></i>+51 999 999 999</p>
+                    <p><i class="fa fa-map-marker-alt mr-2"></i>Villa el Salvador, Peru · Puente Piedra, Peru</p>
+                    <p><i class="fa fa-envelope mr-2"></i>etuchisa.grupo5@gmail.com</p>
+                    </ul>
+                </div>
+            </div>
+            <div class="mt-12 pt-8 border-t border-gray-700">
+                <div class="text-center sm:flex sm:justify-between sm:text-left">
+                    <p class="text-sm text-gray-400">&copy; 2024 ETUCHISA</p>
+                    <p class="mt-2 text-sm text-gray-400 sm:mt-0">
+                        ETUCHISA brinda servicios de tecnología de la información solamente. Los servicios de transporte
+                        están a cargo de terceros independientes.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <script src="js/menu.js"></script>
+    
+<script src="js/carrusel.js"> </script>
+
+</body>
+
+</html>

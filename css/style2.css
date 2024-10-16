@@ -1,0 +1,112 @@
+/*Nosotros-encabezadio*/
+.dropdown {
+    display: none; /* Oculta el dropdown por defecto */
+    position: absolute; /* Asegúrate de que el dropdown se superponga correctamente */
+    background-color: rgb(27, 144, 223); /* Color de fondo del dropdown */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Sombra para el dropdown */
+    z-index: 1; /* Asegura que el dropdown esté en la parte superior */
+}
+
+li:hover .dropdown {
+    display: block; /* Muestra el dropdown al pasar el mouse */
+}
+
+.dropdown ul {
+    list-style: none; /* Elimina el estilo de la lista */
+    padding: 0; /* Elimina el padding */
+    margin: 0; /* Elimina el margen */
+}
+
+.dropdown li {
+    padding: 10px; /* Espaciado para cada elemento del dropdown */
+}
+
+.dropdown li a {
+    color: rgb(255, 255, 255); /* Color del texto */
+    text-decoration: none; /* Elimina el subrayado */
+}
+
+.dropdown li a:hover {
+    background-color: rgb(27, 144, 223); /* Cambia el fondo al pasar el mouse */
+}
+.container{
+    background-image: url('img/conocer.jpg'); /* Imagen de fondo */
+    background-color: rgba(255, 255, 255, 0.6);
+    background-position: center; /* Centrar imagen */
+    background-repeat: no-repeat; /* No repetir imagen */
+    background-size: contain; /* Cubrir todo el contenedor */
+    width: 100%; /* Ancho completo */
+    min-height: 60vh; /* Altura mínima para cubrir la pantalla */
+    display: flex; /* Usar flexbox para centrar contenido */
+    flex-direction: column; /* Apilar contenido verticalmente */
+    justify-content: center; /* Centrar verticalmente */
+    align-items: center; /* Centrar horizontalmente */
+    color: rgb(255, 255, 255); /* Color de texto */
+    text-align: center; /* Centrar texto */
+    padding: 20px; /* Espaciado interno */
+    position: relative; /* Para controlar el z-index si es necesario */
+    z-index: 1; /* Asegurarse de que esté por encima de otras capas */
+}
+.container::before {
+    content: ""; /* Necesario para que el pseudo-elemento se muestre */
+    position: absolute; /* Posiciona el pseudo-elemento */
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 1; /* Asegúrate de que esté sobre la imagen, pero detrás del contenido */
+}
+.container h2 p{
+    font-size: 36px;
+}
+body{
+    background-color: #ffffff;
+}
+.wrapper{
+    margin: 50px auto;
+    width: 70%;
+    background-color: #ffffff;
+}
+.wrapper header h2{
+    font-size: 36px;
+}
+img{
+    max-width: 320px;
+    float: left;
+    border: 3px solid #02afff;
+    border-radius: 10px;
+    margin-right: 15px;
+}
+.text-box{
+    color: rgb(0, 0, 0);
+}
+.text-box h2{
+    font-size: 20px;
+    color: rgb(8, 123, 200);
+}
+.text-box p{
+    font-size: 16px;
+}
+
+
+.wrapper2{
+    margin: 50px auto;
+    width: 70%;
+    background-color: #ffffff;
+}
+.wrapper2 header h2{
+    font-size: 20px;
+}
+.wrapper2 header p{
+    color: rgb(0, 0, 0);
+}
+.text-box1{
+    color: rgb(255, 255, 255);
+}
+.text-box1 h2{
+    font-size: 20px;
+    color: rgb(0, 153, 255);
+}
+.text-box1 p{
+    font-size: 16px;
+}
